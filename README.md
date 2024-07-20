@@ -40,7 +40,7 @@ en the app and make some more notes!
 
 ## Screenshot
 
-!["README Generator screenshot"](./Images/READMEGEN1.PNG)
+!["README Generator screenshot"](./images/jate.PNG)
 
 ## Deployed
 
