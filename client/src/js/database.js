@@ -20,7 +20,7 @@ try{
 const jateDB = await openDB('jate',1);
 const transaction = jateDB.transaction('jate', 'readwrite');
 const store = transaction.objectStore('jate');
-const request = store.put({note: content});
+const request = store.put({id: 1,  note: content});
 const result = await request;
 console.log('data saved to database', result);
 } catch (err){
@@ -35,13 +35,11 @@ console.log('Get from db');
 try{
 
   const jateDB = await openDB('jate',1);
-  const transaction = jateDB.transaction('jate','readonly');
-  const store = transaction.objectStore('jate');
-  const request = store.getAll(id);
+  const tx = jateDB.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const request = store.getAll(1);
   const result = await request;
-  console.log('result.value', result);
-  const lastItem = result.length > 0 ? result[result.length - 1].note : null;
-  return lastItem;
+  return result?.value;
 
 } catch (err){
   console.error('getDb not implemented', err);
