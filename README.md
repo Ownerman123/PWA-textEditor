@@ -19,7 +19,7 @@
 
 ## Installation
 
-    If you wish to run the source code cd into the folder in terminal and 
+If you wish to run the source code cd into the folder in terminal and 
 ```bash
 npm i 
 ```
